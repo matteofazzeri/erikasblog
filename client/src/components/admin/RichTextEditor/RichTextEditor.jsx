@@ -4,13 +4,14 @@ import ListItem from "@tiptap/extension-list-item";
 import TextStyle from "@tiptap/extension-text-style";
 import Underline from "@tiptap/extension-underline";
 import Link from "@tiptap/extension-link";
+import FontFamily from "@tiptap/extension-font-family";
 
-import { FontSize } from "../extensions/FontSizeExtension";
+import { FontSize } from "../../../extensions/FontSizeExtension";
 
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 
-import { convertToJSX, setLink } from "../config/config";
+import { convertToJSX, setLink } from "../../../config/config";
 import ColorPickerButton from "./ColorPickerButton";
 
 // Icons
@@ -19,47 +20,19 @@ import {
   FaItalic,
   FaUnderline,
   FaStrikethrough,
-  FaIndent,
-  FaOutdent,
-  FaAlignCenter,
-  FaAlignJustify,
-  FaAlignLeft,
-  FaAlignRight,
   FaLink,
   FaLinkSlash,
 } from "react-icons/fa6";
 import { FaUndoAlt, FaRedoAlt } from "react-icons/fa";
+import FontFamilySelector from "./FontFamilySelector";
 
 const MenuBar = ({ editor }) => {
-  /* const setLink = useCallback(() => {
-    const previousUrl = editor.getAttributes("link").href;
-    let url = window.prompt("URL", previousUrl);
-    // cancelled
-    if (url === null) {
-      return;
-    }
-    // empty
-    if (url === "") {
-      editor.chain().focus().extendMarkRange("link").unsetLink().run();
-
-      return;
-    }
-    // Check if the URL starts with "http://" or "https://"
-    if (!/^https?:\/\//i.test(url)) {
-      // If not, prepend "https://"
-      url = "https://" + url;
-    }
-
-    // update link
-    editor.chain().focus().extendMarkRange("link").setLink({ href: url }).run();
-  }, [editor]); */
-
   if (!editor) {
     return null;
   }
 
   return (
-    <div className="p-1 w-full flex flex-wrap ">
+    <div className="py-2 px-1 w-full flex flex-wrap ">
       <button
         onClick={() => editor.chain().focus().toggleBold().run()}
         disabled={!editor.can().chain().focus().toggleBold().run()}
@@ -101,23 +74,8 @@ const MenuBar = ({ editor }) => {
         <FaLinkSlash />
       </button>
 
-      {/* <button
-        onClick={() => editor.chain().focus().toggleBlockquote().run()}
-        className={editor.isActive("blockquote") ? "is-active" : ""}
-      >
-        <FaIndent />
-      </button>
-      <button
-        onClick={() => editor.chain().focus().setParagraph().run()}
-        className={editor.isActive("paragraph") ? "is-active" : ""}
-      >
-        <FaOutdent />
-      </button>
-      <button onClick={() => editor.chain().focus().setHardBreak().run()}>
-        hard break
-      </button> */}
-
       <ColorPickerButton editor={editor} />
+      <FontFamilySelector editor={editor} />
       <select
         className="rounded-md border-solid border-[1px] m-[2px]"
         onChange={(e) => {
@@ -153,25 +111,9 @@ const MenuBar = ({ editor }) => {
   );
 };
 
-const extensions = [
-  Color.configure({ types: [TextStyle.name, ListItem.name] }),
-  TextStyle.configure({ types: [ListItem.name] }),
-  StarterKit.configure({
-    bulletList: {
-      keepMarks: true,
-      keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
-    },
-    orderedList: {
-      keepMarks: true,
-      keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
-    },
-  }),
-];
-
 const content = ``;
 
-export default function RichTextEditor() {
-  const [editorContent, setEditorContent] = useState("");
+export default function RichTextEditor({ content, setDescription }) {
 
   const editor = useEditor({
     extensions: [
@@ -184,39 +126,24 @@ export default function RichTextEditor() {
         openOnClick: false,
         autolink: true,
       }),
+      FontFamily.configure({
+        types: ["textStyle"],
+      }),
     ],
-    content: "",
+    content: content || "",
     onUpdate: ({ editor }) => {
-      setEditorContent(editor.getHTML());
-      document.getElementById("campo-di-prova").innerHTML = editorContent;
+      setDescription(editor.getHTML());
     },
   });
 
-  const handleSubmit = (e, editor) => {
-    e.preventDefault();
-    if (editorContent === "<p></p>") {
-      console.log("vuoto");
-      document.getElementById("campo-di-prova").innerHTML = "";
-    } else {
-      console.log(convertToJSX(editorContent));
-    }
-  };
-
   return (
-    <form
-      className="w-full h-full p-2 border-[1px] border-solid rounded-xl"
-      onSubmit={(e) => handleSubmit(e, editor)}
-    >
-      <MenuBar editor={editor} />
-      <div className="min-h-[150px] border-[1px] border-solid rounded-md">
+    <div className="w-full h-fit border-[1px] border-solid rounded-xl">
+      <div>
+        <MenuBar editor={editor} />
+      </div>
+      <div className="w-full min-h-[150px] border-t-[1px] border-solid ">
         <EditorContent editor={editor} />
       </div>
-      <button
-        onClick={(e) => handleSubmit(e, editor)}
-        className="bg-black text-white font-bold my-2 px-5 py-1 text-lg"
-      >
-        SAVE
-      </button>
-    </form>
+    </div>
   );
 }
