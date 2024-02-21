@@ -31,7 +31,7 @@ const Home = () => {
 
   fetchData();
 
-  return <>ciao--{name && <p>{name}</p>}</>;
+  return <>ciao--{name && <p>{name}</p>} <a href="/admin">cliccami</a></>;
 };
 
 export default Home;
