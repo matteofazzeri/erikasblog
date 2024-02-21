@@ -25,6 +25,14 @@ button {
   margin: 2px;
 }
 
+p {
+  color: black;
+}
+
+strong {
+  font-weight: bold;
+}
+
 a {
   text-decoration: underline;
   text-decoration-color: blue;

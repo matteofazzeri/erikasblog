@@ -31,13 +31,13 @@ export function AddCategory({ elem, rows }) {
       name: catName,
       slug: slug,
       description: description,
-      active: visibility,
+      visibility: visibility,
+      date: new Date(),
     };
 
     rows.push(newObj);
 
-    console.log(rows);
-
+    console.log(newObj);
     // Clear input values after creating category
     setCatName("");
     setSlug("");

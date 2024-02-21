@@ -34,27 +34,39 @@ const MenuBar = ({ editor }) => {
   return (
     <div className="py-2 px-1 w-full flex flex-wrap ">
       <button
-        onClick={() => editor.chain().focus().toggleBold().run()}
+        onClick={(e) => {
+          e.preventDefault();
+          editor.chain().focus().toggleBold().run();
+        }}
         disabled={!editor.can().chain().focus().toggleBold().run()}
         className={editor.isActive("bold") ? "is-active" : ""}
       >
         <FaBold />
       </button>
       <button
-        onClick={() => editor.chain().focus().toggleItalic().run()}
+        onClick={(e) => {
+          e.preventDefault();
+          editor.chain().focus().toggleItalic().run();
+        }}
         disabled={!editor.can().chain().focus().toggleItalic().run()}
         className={editor.isActive("italic") ? "is-active" : ""}
       >
         <FaItalic />
       </button>
       <button
-        onClick={() => editor.chain().focus().toggleUnderline().run()}
+        onClick={(e) => {
+          e.preventDefault();
+          editor.chain().focus().toggleUnderline().run();
+        }}
         className={editor.isActive("underline") ? "is-active" : ""}
       >
         <FaUnderline />
       </button>
       <button
-        onClick={() => editor.chain().focus().toggleStrike().run()}
+        onClick={(e) => {
+          e.preventDefault();
+          editor.chain().focus().toggleStrike().run();
+        }}
         disabled={!editor.can().chain().focus().toggleStrike().run()}
         className={editor.isActive("strike") ? "is-active" : ""}
       >
@@ -62,13 +74,19 @@ const MenuBar = ({ editor }) => {
       </button>
 
       <button
-        onClick={() => setLink(editor)}
+        onClick={(e) => {
+          e.preventDefault();
+          setLink(editor);
+        }}
         className={editor.isActive("link") ? "is-active" : ""}
       >
         <FaLink />
       </button>
       <button
-        onClick={() => editor.chain().focus().unsetLink().run()}
+        onClick={(e) => {
+          e.preventDefault();
+          editor.chain().focus().unsetLink().run();
+        }}
         disabled={!editor.isActive("link")}
       >
         <FaLinkSlash />
@@ -114,12 +132,15 @@ const MenuBar = ({ editor }) => {
 const content = ``;
 
 export default function RichTextEditor({ content, setDescription }) {
-
+  const [editorContent, setEditorContent] = useState(content || "");
   const editor = useEditor({
     extensions: [
       StarterKit,
       Underline,
-      Color.configure({ types: [TextStyle.name, ListItem.name] }),
+      Color.configure({
+        /* types: [TextStyle.name, ListItem.name], */
+        defaultColor: "#000000",
+      }),
       TextStyle.configure({ types: [ListItem.name] }),
       FontSize,
       Link.configure({
@@ -130,8 +151,9 @@ export default function RichTextEditor({ content, setDescription }) {
         types: ["textStyle"],
       }),
     ],
-    content: content || "",
+    content: editorContent,
     onUpdate: ({ editor }) => {
+      setEditorContent(editor.getHTML());
       setDescription(editor.getHTML());
     },
   });

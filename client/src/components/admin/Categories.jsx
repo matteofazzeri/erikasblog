@@ -8,91 +8,37 @@ const Categories = () => {
       slug: "electronics",
       visibility: false,
       date: "08/02/2024",
+      description: "Description for Electronics",
     },
     {
       name: "Clothing",
       slug: "clothing",
       visibility: true,
       date: "27/02/2024",
+      description: "Description for Clothing",
     },
     {
       name: "Home & Garden",
       slug: "home-garden",
       visibility: true,
       date: "10/02/2024",
+      description: "Description for Home & Garden",
     },
     {
       name: "Beauty & Personal Care",
       slug: "beauty-personal-care",
       visibility: true,
       date: "05/02/2024",
+      description: "Description for Beauty & Personal Care",
     },
     {
       name: "Toys & Games",
       slug: "toys-games",
       visibility: true,
       date: "20/02/2024",
+      description: "Description for Toys & Games",
     },
-    {
-      name: "Sports & Outdoors",
-      slug: "sports-outdoors",
-      visibility: true,
-      date: "15/02/2024",
-    },
-    {
-      name: "Books",
-      slug: "books",
-      visibility: true,
-      date: "23/01/2024",
-    },
-    {
-      name: "Health & Wellness",
-      slug: "health-wellness",
-      visibility: true,
-      date: "30/01/2024",
-    },
-    {
-      name: "Automotive",
-      slug: "automotive",
-      visibility: true,
-      date: "22/02/2024",
-    },
-    {
-      name: "Food & Beverage",
-      slug: "food-beverage",
-      visibility: true,
-      date: "24/02/2024",
-    },
-    {
-      name: "Furniture",
-      slug: "furniture",
-      visibility: false,
-      date: "18/02/2024",
-    },
-    {
-      name: "Jewelry",
-      slug: "jewelry",
-      visibility: true,
-      date: "25/01/2024",
-    },
-    {
-      name: "Pet Supplies",
-      slug: "pet-supplies",
-      visibility: false,
-      date: "02/02/2024",
-    },
-    {
-      name: "Art & Crafts",
-      slug: "art-crafts",
-      visibility: false,
-      date: "12/02/2024",
-    },
-    {
-      name: "Electrical Appliances",
-      slug: "electrical-appliances",
-      visibility: false,
-      date: "28/01/2024",
-    },
+    // Add more objects with descriptions here
   ];
 
   // Add more rows as needed
