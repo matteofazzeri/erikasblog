@@ -31,7 +31,7 @@ const Home = () => {
 
   fetchData();
 
-  return <>{name && <p>{name}</p>}</>;
+  return <>ciao--{name && <p>{name}</p>}</>;
 };
 
 export default Home;
