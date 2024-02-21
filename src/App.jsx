@@ -12,7 +12,7 @@ export default function App() {
     <ThemeProvider>
       <main className="w-screen min-h-screen">
         <Routes>
-          <Route exact path="" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="/admin/login" element={<Login />} />
           <Route path="/admin" element={<AdminPanel />} />
           <Route path="/admin/posts" element={<AdminPanel />} />
