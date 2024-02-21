@@ -1,6 +1,6 @@
 {
   "homepage": "https://matteofazzeri.github.io/erikasblog/",
-  "name": "client",
+  "name": "erikasblog",
   "private": true,
   "version": "0.0.0",
   "type": "module",

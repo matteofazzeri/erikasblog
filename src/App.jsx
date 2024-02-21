@@ -5,11 +5,12 @@ import AdminPanel from "./pages/AdminPanel";
 import Articles from "./pages/Articles";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
+import { ThemeProvider } from "@material-tailwind/react";
 
 export default function App() {
   return (
-    <main className="w-screen min-h-screen">
-      <Router>
+    <ThemeProvider>
+      <main className="w-screen min-h-screen">
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/admin/login" element={<Login />} />
@@ -20,7 +21,8 @@ export default function App() {
           <Route path="/blog/Articles" element={<Articles />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </Router>
     </main>
+    </ThemeProvider>
+    
   );
 }
