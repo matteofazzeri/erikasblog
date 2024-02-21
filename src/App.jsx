@@ -9,7 +9,7 @@ import NotFound from "./pages/NotFound";
 export default function App() {
   return (
     <main className="w-screen min-h-screen">
-      <Router>
+      <Router basename="https://matteofazzeri.github.io/erikasblog/">
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/admin/login" element={<Login />} />
