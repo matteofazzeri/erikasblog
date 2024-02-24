@@ -8,7 +8,7 @@ import AdminPanel from "./pages/AdminPanel.jsx";
 import Home from "./pages/Home.jsx";
 import { BrowserRouter as Router } from "react-router-dom";
 
-/* const router = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/erikasblog/",
     element: <App />,
@@ -23,15 +23,15 @@ import { BrowserRouter as Router } from "react-router-dom";
       },
     ],
   },
-]); */
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider>
-      {/* <RouterProvider router={router} /> */}
-      <Router>
+      <RouterProvider router={router} />
+      {/* <Router>
         <App />
-      </Router>
+      </Router> */}
     </ThemeProvider>
   </React.StrictMode>
 );
