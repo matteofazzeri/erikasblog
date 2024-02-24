@@ -6,9 +6,9 @@ import { ThemeProvider } from "@material-tailwind/react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AdminPanel from "./pages/AdminPanel.jsx";
 import Home from "./pages/Home.jsx";
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 
-const router = createBrowserRouter([
+/* const router = createBrowserRouter([
   {
     path: "/erikasblog/",
     element: <App />,
@@ -23,15 +23,15 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+]); */
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider>
       <RouterProvider router={router} />
-      {/* <Router>
+      <Router>
         <App />
-      </Router> */}
+      </Router>
     </ThemeProvider>
   </React.StrictMode>
 );

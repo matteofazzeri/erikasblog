@@ -9,7 +9,7 @@ import NotFound from "./pages/NotFound";
 export default function App() {
   return (
     <main className="w-screen min-h-screen">
-      {/* <Routes>
+      <Routes>
         <Route exact path="/erikasblog" element={<Home />} />
         <Route path="/erikasblog/admin/login" element={<Login />} />
         <Route path="/erikasblog/admin" element={<AdminPanel />} />
@@ -18,7 +18,7 @@ export default function App() {
         <Route path="/erikasblog/blog" element={<Home />} />
         <Route path="/erikasblog/blog/Articles" element={<Articles />} />
         <Route path="/erikasblog/*" element={<NotFound />} />
-      </Routes> */}
+      </Routes>
     </main>
   );
 }
