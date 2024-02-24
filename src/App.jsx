@@ -10,7 +10,7 @@ export default function App() {
   return (
     <main className="w-screen min-h-screen">
       <Routes>
-        <Route exact path="/erikasblog" element={<Home />} />
+        <Route exact path="/erikasblog/" element={<Home />} />
         <Route path="/erikasblog/admin/login" element={<Login />} />
         <Route path="/erikasblog/admin" element={<AdminPanel />} />
         <Route path="/erikasblog/admin/posts" element={<AdminPanel />} />
