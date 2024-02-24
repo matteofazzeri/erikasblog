@@ -1,37 +1,57 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
 import { ThemeProvider } from "@material-tailwind/react";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+
+// my pages
+import App from "./App.jsx";
 import AdminPanel from "./pages/AdminPanel.jsx";
 import Home from "./pages/Home.jsx";
-import { HashRouter as Router } from "react-router-dom";
+import Articles from "./pages/Articles.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
-/* const router = createBrowserRouter([
+const Layout = () => {
+  return (
+    <div>
+      <Outlet />
+    </div>
+  );
+};
+
+const router = createBrowserRouter([
   {
-    path: "/erikasblog/",
-    element: <App />,
+    path: "/",
+    element: <Layout />,
     children: [
       {
-        path: "/erikasblog/home",
+        path: "erikasblog/",
+        element: <App />,
+      },
+      {
+        path: "erikasblog/admin/*",
+        element: <AdminPanel />,
+      },
+      {
+        path: "erikasblog/blog",
         element: <Home />,
       },
       {
-        path: "/erikasblog/admin/",
-        element: <AdminPanel />,
+        path: "erikasblog/articles",
+        element: <Articles />,
+      },
+      {
+        path: "erikasblog/*",
+        element: <NotFound />,
       },
     ],
   },
-]); */
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider>
-      {/* <RouterProvider router={router} /> */}
-      <Router>
-        <App />
-      </Router>
+      <RouterProvider router={router} />
     </ThemeProvider>
   </React.StrictMode>
 );
