@@ -29,9 +29,15 @@ const Home = () => {
       .catch((err) => console.log(err));
   };
 
-  fetchData();
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  return <>ciao--{name && <p>{name}</p>} <a href="/erikasblog/admin">cliccami</a></>;
+  return (
+    <>
+      ciao--{name && <p>{name}</p>} <a href="/erikasblog/admin">cliccami</a>
+    </>
+  );
 };
 
 export default Home;
