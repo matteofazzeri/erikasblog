@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import AdminPanel from "./pages/AdminPanel";
 import Articles from "./pages/Articles";
@@ -9,18 +9,16 @@ import NotFound from "./pages/NotFound";
 export default function App() {
   return (
     <main className="w-screen min-h-screen">
-      <Router>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/admin/login" element={<Login />} />
-          <Route path="/admin" element={<AdminPanel />} />
-          <Route path="/admin/posts" element={<AdminPanel />} />
-          <Route path="/admin/categories" element={<AdminPanel />} />
-          <Route path="/blog" element={<Home />} />
-          <Route path="/blog/Articles" element={<Articles />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Router>
+      <Routes>
+        <Route exact path="/erikasblog/" element={<Home />} />
+        <Route path="/erikasblog/admin/login" element={<Login />} />
+        <Route path="/erikasblog/admin" element={<AdminPanel />} />
+        <Route path="/erikasblog/admin/posts" element={<AdminPanel />} />
+        <Route path="/erikasblog/admin/categories" element={<AdminPanel />} />
+        <Route path="/erikasblog/blog" element={<Home />} />
+        <Route path="/erikasblog/blog/Articles" element={<Articles />} />
+        <Route path="/erikasblog/*" element={<NotFound />} />
+      </Routes>
     </main>
   );
 }

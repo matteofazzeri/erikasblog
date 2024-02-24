@@ -28,7 +28,7 @@ const Sidebar = ({ open }, { handleOpen }) => {
   return (
     <>
       <div className="mb-2 p-4">
-        <Link to={"/admin"} className="no-underline">
+        <Link to={"/erikasblog/admin"} className="no-underline">
           <Typography variant="h5" color="blue-gray">
             Dashboard
           </Typography>

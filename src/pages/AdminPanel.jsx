@@ -23,10 +23,11 @@ const AdminPanel = () => {
           <NavbarWithSearch />
         </header>
         <div className="mt-2">
-          {location.pathname === "/admin/posts" && <Posts />}
-          {location.pathname === "/admin/categories" && <Categories />}
-          {location.pathname === "/admin/login" && <Login />}
-          {location.pathname === "/admin/*" && <NotFound />}
+          {console.log(location.pathname)}
+          {location.pathname === "/erikasblog/admin/posts" && <Posts />}
+          {location.pathname === "/erikasblog/admin/categories" && <Categories />}
+          {location.pathname === "/erikasblog/admin/login" && <Login />}
+          {location.pathname === "/erikasblog/admin/*" && <NotFound />}
         </div>
       </div>
     </section>

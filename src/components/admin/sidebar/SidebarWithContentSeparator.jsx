@@ -32,7 +32,7 @@ export function SidebarWithContentSeparator() {
   return (
     <Card className="h-full w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5 hidden xl:block">
       <div className="mb-2 p-4">
-        <Link to={"/admin"} className="no-underline">
+        <Link to={"/erikasblog/admin"} className="no-underline">
           <Typography variant="h5" color="blue-gray">
             Dashboard
           </Typography>
@@ -79,7 +79,7 @@ export function SidebarWithContentSeparator() {
           <AccordionBody className="py-1">
             <List className="p-0">
               <Link
-                to={"/admin/categories"}
+                to={"/erikasblog/admin/categories"}
                 className="flex items-center space-x-2 no-underline"
               >
                 <ListItem>
@@ -106,7 +106,7 @@ export function SidebarWithContentSeparator() {
               </Link>
 
               <Link
-                to={"/admin/posts"}
+                to={"/erikasblog/admin/posts"}
                 className="flex items-center space-x-2 no-underline"
               >
                 <ListItem>

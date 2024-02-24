@@ -63,7 +63,7 @@ export function SortableTable({ TABLE_HEAD, TABLE_ROWS, elem }) {
               color="blue-gray"
               className="hidden md:block"
             >
-              {elem.toLowerCase() === "posts" ? "Posts" : "Categories"}
+              {elem.toLowerCase() === "post" ? "Posts" : "Categories"}
             </Typography>
           </div>
           <div className="w-full h-fit md:w-fit pt-[2px] flex justify-between sm:justify-around md:justify-normal items-center shrink-0 flex-row sm:gap-2">

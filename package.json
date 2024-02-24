@@ -1,5 +1,4 @@
 {
-  "homepage": "https://erikasblog.vercel.app",
   "name": "erikasblog",
   "private": true,
   "version": "0.0.0",
@@ -24,7 +23,6 @@
     "@tiptap/pm": "^2.2.3",
     "@tiptap/react": "^2.2.3",
     "@tiptap/starter-kit": "^2.2.3",
-    "@vercel/analytics": "^1.2.2",
     "autoprefixer": "^10.4.17",
     "date-fns": "^3.3.1",
     "postcss": "^8.4.35",
