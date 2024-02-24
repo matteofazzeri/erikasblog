@@ -26,7 +26,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "erikasblog/",
-        element: <App />,
+        element: <Home />,
       },
       {
         path: "erikasblog/admin/*",
@@ -42,6 +42,10 @@ const router = createBrowserRouter([
       },
       {
         path: "erikasblog/*",
+        element: <NotFound />,
+      },
+      {
+        path: "erikasblog/notfound",
         element: <NotFound />,
       },
     ],
