@@ -28,7 +28,7 @@ import { HashRouter as Router } from "react-router-dom";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider>
-      <RouterProvider router={router} />
+      {/* <RouterProvider router={router} /> */}
       <Router>
         <App />
       </Router>
