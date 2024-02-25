@@ -12,7 +12,7 @@ function LatestPosts() {}
 
 const Home = () => {
   return (
-    <section className="w-screen min-h-screen bg-red-200 relative overflow-auto">
+    <section className="w-screen min-h-screen bg-blue-200 relative overflow-auto">
       <header className="w-full h-[15vh] bg-white flex flex-col items-center justify-center gap-0 m-0 p-0">
         <div className="flex flex-col items-center">
           <Typography variant="h1">Erika's Blog</Typography>
@@ -28,12 +28,12 @@ const Home = () => {
           <li>ciao</li>
         </ul>
       </nav>
-      <section className="w-full max-h-[calc(100vh-15vh-5vh)] flex flex-row p-4 ">
-        <div className="w-[70%] h-screen bg-white">
+      <section className="w-full max-h-[calc(100vh-15vh-5vh)] flex flex-col md:flex-row p-4 ">
+        <div className="w-full md:w-[70%] h-screen flex flex-col">
           <Typography variant="lead">
             qui ci saranno i post più recenti. Per rendere l'idea
           </Typography>
-          <Card className=" w-full p-4">
+          <Card className=" w-full p-4 mb-4">
             <div className="w-full h-min flex justify-center bg-black">
               <CardHeader floated={false} className=" h-fit w-fit">
                 <img
@@ -56,7 +56,7 @@ const Home = () => {
               <Button>Read More</Button>
             </CardFooter>
           </Card>
-          <Card className=" w-full p-4">
+          <Card className=" w-full p-4 mb-4">
             <div className="w-full h-min flex justify-center bg-black">
               <CardHeader floated={false} className=" h-fit w-fit">
                 <img
@@ -79,7 +79,7 @@ const Home = () => {
               <Button>Read More</Button>
             </CardFooter>
           </Card>
-          <Card className=" w-full p-4">
+          <Card className=" w-full p-4 mb-4">
             <div className="w-full h-min flex justify-center bg-black">
               <CardHeader floated={false} className=" h-fit w-fit">
                 <img
