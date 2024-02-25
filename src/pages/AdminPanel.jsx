@@ -3,6 +3,8 @@ import {
   SidebarWithBurgerMenu,
   SidebarWithContentSeparator,
 } from "../components/admin/sidebar";
+import ReactGA from "react-ga";
+
 import { NavbarWithSearch } from "../components/admin/navbar";
 import Categories from "../components/admin/Categories";
 import Posts from "../components/admin/Posts";
@@ -16,6 +18,10 @@ const AdminPanel = () => {
     // Log location.pathname whenever it changes
     /* console.log(location.pathname); */
   }, [location]);
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname);
+  }, []);
 
   const isValidPath = () => {
     return (
