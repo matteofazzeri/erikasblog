@@ -106,7 +106,7 @@ export function SidebarWithContentSeparator() {
               </Link>
 
               <Link
-                to={"/wadmin/posts"}
+                to={"/admin/posts"}
                 className="flex items-center space-x-2 no-underline"
               >
                 <ListItem>
