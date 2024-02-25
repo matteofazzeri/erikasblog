@@ -25,28 +25,28 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "erikasblog/",
-        element: <Home />,
+        path: "/erikasblog/",
+        element: <App />,
       },
       {
-        path: "erikasblog/admin/*",
+        path: "/erikasblog/admin/*",
         element: <AdminPanel />,
       },
       {
-        path: "erikasblog/blog",
+        path: "/erikasblog/blog",
         element: <Home />,
       },
       {
-        path: "erikasblog/articles",
+        path: "/erikasblog/articles",
         element: <Articles />,
       },
       {
-        path: "erikasblog/*",
+        path: "/erikasblog/notfound", // This should come before the wildcard path
         element: <NotFound />,
       },
       {
-        path: "erikasblog/notfound",
-        element: <NotFound />,
+        path: "/erikasblog/*",
+        element: <NotFound />, // This will catch all other unmatched paths
       },
     ],
   },
