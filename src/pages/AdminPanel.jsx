@@ -19,10 +19,10 @@ const AdminPanel = () => {
 
   const isValidPath = () => {
     return (
-      location.pathname.startsWith("/erikasblog/admin/posts") ||
-      location.pathname.startsWith("/erikasblog/admin/categories") ||
-      location.pathname.startsWith("/erikasblog/admin/login") ||
-      location.pathname.startsWith("/erikasblog/admin")
+      location.pathname.startsWith("/admin/posts") ||
+      location.pathname.startsWith("/admin/categories") ||
+      location.pathname.startsWith("/admin/login") ||
+      location.pathname.startsWith("/admin")
     );
   };
 
@@ -37,13 +37,18 @@ const AdminPanel = () => {
           <NavbarWithSearch />
         </header>
         <div className="mt-2">
-          {location.pathname === "/erikasblog/admin/posts" && <Posts />}
-          {location.pathname === "/erikasblog/admin/categories" && (
+          {location.pathname === "/admin/posts" && <Posts />}
+          {location.pathname === "/admin/categories" && (
             <Categories />
           )}
-          {location.pathname === "/erikasblog/admin/login" && <Login />}
+          {location.pathname === "/admin/login" && <Login />}
           {/* You may need to adjust the condition for NotFound */}
-          {!isValidPath() && <Navigate to="/erikasblog/notfound" />}
+          {
+            !isValidPath() &&
+              console.log(
+                "is invalid"
+              ) /* <Navigate to="/erikasblog/notfound" /> */
+          }
         </div>
       </div>
     </section>

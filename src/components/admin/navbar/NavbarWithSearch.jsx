@@ -21,10 +21,10 @@ export function NavbarWithSearch() {
       <div className="flex flex-wrap items-center justify-center xl:justify-between text-blue-gray-900">
         <Typography
           as="a"
-          href="/admin"
+          href="/"
           className="mr-0 cursor-pointer py-1.5 font-bold uppercase no-underline text-2xl"
         >
-          {/* Erika's  */}Blog
+          Erika's Blog
         </Typography>
         <div className="hidden items-center gap-x-2 xl:flex">
           <div className="relative flex w-full gap-2 md:w-max">
