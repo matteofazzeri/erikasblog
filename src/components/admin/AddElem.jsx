@@ -10,9 +10,8 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
-import DragDropFile from "../DragDropFile";
-import { WhenToPublicPicker } from "../WhenToPublicPicker";
-import { format } from "date-fns";
+import DragDropFile from "./DragDropFile";
+import { WhenToPublicPicker } from "./WhenToPublicPicker";
 
 export function AddCategory({ elem, rows }) {
   const [catName, setCatName] = useState("");
