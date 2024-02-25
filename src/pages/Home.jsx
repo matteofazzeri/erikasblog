@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import serverURL from "../config/db";
 import { Link } from "react-router-dom";
+import { CircularLoader } from "../assets/Loader";
 
 const Home = () => {
   const [name, setName] = useState();
+  const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
     await fetch(`${serverURL.production.backendUrl}`, { method: "GET" })
@@ -27,7 +29,9 @@ const Home = () => {
           console.log("Empty payload or invalid format");
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        /* console.log(err) */
+      });
   };
 
   useEffect(() => {
@@ -36,8 +40,8 @@ const Home = () => {
 
   return (
     <>
-      ciao--{name && <p>{name}</p>}{" "}
-      <Link to={import.meta.env.VITE_URL_BASE + "/admin"}>cliccami</Link>
+      ciao--{name && <p>{name}</p>} {loading && <CircularLoader color="grey" />}{" "}
+      <Link to={"/admin"}>cliccami</Link>
     </>
   );
 };

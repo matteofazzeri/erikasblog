@@ -19,16 +19,10 @@ const AdminPanel = () => {
 
   const isValidPath = () => {
     return (
-      location.pathname.startsWith(
-        import.meta.env.VITE_URL_BASE + "/admin/posts"
-      ) ||
-      location.pathname.startsWith(
-        import.meta.env.VITE_URL_BASE + "/admin/categories"
-      ) ||
-      location.pathname.startsWith(
-        import.meta.env.VITE_URL_BASE + "/admin/login"
-      ) ||
-      location.pathname.startsWith(import.meta.env.VITE_URL_BASE + "/admin")
+      location.pathname.startsWith("/admin/posts") ||
+      location.pathname.startsWith("/admin/categories") ||
+      location.pathname.startsWith("/admin/login") ||
+      location.pathname.startsWith("/admin")
     );
   };
 
@@ -43,14 +37,9 @@ const AdminPanel = () => {
           <NavbarWithSearch />
         </header>
         <div className="mt-2">
-          {location.pathname ===
-            import.meta.env.VITE_URL_BASE + "/admin/posts" && <Posts />}
-          {location.pathname ===
-            import.meta.env.VITE_URL_BASE + "/admin/categories" && (
-            <Categories />
-          )}
-          {location.pathname ===
-            import.meta.env.VITE_URL_BASE + "/admin/login" && <Login />}
+          {location.pathname === "/admin/posts" && <Posts />}
+          {location.pathname === "/admin/categories" && <Categories />}
+          {location.pathname === "/admin/login" && <Login />}
           {/* You may need to adjust the condition for NotFound */}
           {
             !isValidPath() &&
