@@ -69,7 +69,10 @@ export function SortableTable({ TABLE_HEAD, TABLE_ROWS, elem }) {
           <div className="w-full h-fit md:w-fit pt-[2px] flex justify-between sm:justify-around md:justify-normal items-center shrink-0 flex-row sm:gap-2">
             <div className="w-12 md:w-72">
               <Input
-                label="Search Categories"
+                label={
+                  "Search " +
+                  (elem.toLowerCase() === "post" ? "Posts" : "Categories")
+                }
                 icon={<MagnifyingGlassIcon className="h-5 w-5" />}
                 onChange={(e) => {
                   console.log(e.target.value);
