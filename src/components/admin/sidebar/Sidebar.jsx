@@ -24,21 +24,18 @@ import {
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
 
-const Sidebar = ({ open }, { handleOpen }) => {
+const Sidebar = ({ open, handleOpen }) => {
   return (
     <>
       <div className="mb-2 p-4">
-        <Link to={"/erikasblog/admin"} className="no-underline">
+        <Link
+          to={import.meta.env.VITE_URL_BASE + "/admin"}
+          className="no-underline"
+        >
           <Typography variant="h5" color="blue-gray">
             Dashboard
           </Typography>
         </Link>
-      </div>
-      <div className="p-2 lg:hidden">
-        <Input
-          icon={<MagnifyingGlassIcon className="h-5 w-5" />}
-          label="Search"
-        />
       </div>
       <List>
         <Accordion
@@ -81,36 +78,53 @@ const Sidebar = ({ open }, { handleOpen }) => {
           <AccordionBody className="py-1">
             <List className="p-0">
               <Link
-                to={"/admin/categories"}
+                to={"categories"}
                 className="flex items-center space-x-2 no-underline"
               >
                 <ListItem>
                   <ListItemPrefix>
-                    
+                    <svg
+                      className="fi-sidebar-item-icon h-6 w-6 text-primary-600 dark:text-primary-400"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                      data-slot="icon"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M6 6.878V6a2.25 2.25 0 0 1 2.25-2.25h7.5A2.25 2.25 0 0 1 18 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 0 0 4.5 9v.878m13.5-3A2.25 2.25 0 0 1 19.5 9v.878m0 0a2.246 2.246 0 0 0-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0 1 21 12v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6c0-.98.626-1.813 1.5-2.122"
+                      ></path>
+                    </svg>
                   </ListItemPrefix>
                   Categories
                 </ListItem>
               </Link>
 
               <Link
-                to={"/admin/posts"}
+                to={"posts"}
                 className="flex items-center space-x-2 no-underline"
               >
                 <ListItem>
                   <ListItemPrefix>
                     <svg
+                      className="fi-sidebar-item-icon h-6 w-6 text-primary-600 dark:text-primary-400"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
-                      strokeWidth={1.5}
+                      strokeWidth="1.5"
                       stroke="currentColor"
-                      className="w-6 h-6"
+                      aria-hidden="true"
+                      data-slot="icon"
                     >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75"
-                      />
+                        d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
+                      ></path>
                     </svg>
                   </ListItemPrefix>
                   Posts

@@ -15,8 +15,13 @@ export function SidebarWithBurgerMenu() {
   const closeDrawer = () => setIsDrawerOpen(false);
 
   return (
-    <div className="block xl:hidden max-h-[100vh] z-50">
-      <IconButton variant="text" size="lg" onClick={openDrawer} className="md:mt-4">
+    <div className="xl:hidden max-h-[100vh] z-50">
+      <IconButton
+        variant="text"
+        size="lg"
+        onClick={openDrawer}
+        className="md:mt-4"
+      >
         {isDrawerOpen ? (
           <XMarkIcon className="h-8 w-8 stroke-2" />
         ) : (
@@ -29,8 +34,7 @@ export function SidebarWithBurgerMenu() {
           shadow={false}
           className="h-[calc(100vh-2rem)] w-full p-4"
         >
-          ciao
-          {/* <Sidebar open={open} handleOpen={handleOpen} /> */}
+          <Sidebar open={open} handleOpen={handleOpen} />
         </Card>
       </Drawer>
     </div>

@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Navbar,
-  Typography,
-  Button,
-  Input,
-} from "@material-tailwind/react";
+import { Navbar, Typography, Button, Input } from "@material-tailwind/react";
 
 export function NavbarWithSearch() {
   const [openNav, setOpenNav] = React.useState(false);
