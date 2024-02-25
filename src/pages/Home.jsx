@@ -19,7 +19,7 @@ const Home = () => {
           <Typography variant="lead">Welcome to my brain</Typography>
         </div>
       </header>
-      <nav className="w-full h-[5vh] bg-black/10 flex justify-center items-center sticky top-0">
+      <nav className="w-full h-[5vh] bg-black/10 flex justify-center items-center sticky top-0 z-[999]">
         <ul className="flex flex-row gap-12">
           <li>ciao</li>
           <li>ciao</li>
@@ -29,7 +29,7 @@ const Home = () => {
         </ul>
       </nav>
       <section className="w-full max-h-[calc(100vh-15vh-5vh)] flex flex-col md:flex-row p-4 ">
-        <div className="w-full md:w-[70%] h-screen flex flex-col">
+        <div className="w-full md:w-[70%] h-fit flex flex-col">
           <Typography variant="lead">
             qui ci saranno i post più recenti. Per rendere l'idea
           </Typography>
@@ -103,7 +103,7 @@ const Home = () => {
             </CardFooter>
           </Card>
         </div>
-        <div>
+        <div className="w-full md:w-[calc(100vw-70%)] bg-green-300 h-fit">
           <Typography variant="lead">qui qualcosa, vedremo</Typography>
         </div>
       </section>
