@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import serverURL from "../config/db";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [name, setName] = useState();
@@ -35,7 +36,8 @@ const Home = () => {
 
   return (
     <>
-      ciao--{name && <p>{name}</p>} <a href="#/admin">cliccami</a>
+      ciao--{name && <p>{name}</p>}{" "}
+      <Link to={import.meta.env.VITE_URL_BASE + "/admin"}>cliccami</Link>
     </>
   );
 };
