@@ -10,7 +10,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="erikasblog/" element={<Home />} />
-          <Route path="/admin/*" element={<AdminPanel />} />
+          <Route path="admin/*" element={<AdminPanel />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>

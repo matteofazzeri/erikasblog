@@ -35,7 +35,7 @@ const Home = () => {
 
   return (
     <>
-      ciao--{name && <p>{name}</p>} <a href="erikasblog/#/admin">cliccami</a>
+      ciao--{name && <p>{name}</p>} <a href="#/admin">cliccami</a>
     </>
   );
 };
