@@ -4,5 +4,11 @@
             "source": "/(.*)",
             "destination": "/"
         }
+    ],
+    "redirects": [
+        {
+            "source": "/sc",
+            "destination": "https://github.com/matteofazzeri/erikasblog"
+        }
     ]
 }
