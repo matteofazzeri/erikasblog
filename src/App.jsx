@@ -6,6 +6,7 @@ import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import PrivateRoutes from "./auth/PrivateRoute";
 import { Analytics } from "@vercel/analytics/react";
+
 export default function App() {
   return (
     <main className="min-h-screen">
