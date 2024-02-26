@@ -74,8 +74,8 @@ const Sidebar = ({ open, handleOpen }) => {
           </ListItem>
           <AccordionBody className="py-1">
             <List className="p-0">
-              <Link
-                to={"/admin/categories"}
+              <a
+                href="/admin/categories"
                 className="flex items-center space-x-2 no-underline"
               >
                 <ListItem>
@@ -99,10 +99,10 @@ const Sidebar = ({ open, handleOpen }) => {
                   </ListItemPrefix>
                   Categories
                 </ListItem>
-              </Link>
+              </a>
 
-              <Link
-                to={"/admin/posts"}
+              <a
+                href="/admin/posts"
                 className="flex items-center space-x-2 no-underline"
               >
                 <ListItem>
@@ -126,7 +126,7 @@ const Sidebar = ({ open, handleOpen }) => {
                   </ListItemPrefix>
                   Posts
                 </ListItem>
-              </Link>
+              </a>
             </List>
           </AccordionBody>
         </Accordion>
