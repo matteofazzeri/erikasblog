@@ -15,14 +15,15 @@ const AdminPanel = () => {
   useEffect(() => {
     // Log location.pathname whenever it changes
     /* console.log(location.pathname); */
+    console.log(location.pathname)
   }, [location]);
 
   const isValidPath = () => {
     return (
-      location.pathname.startsWith("admin/posts") ||
-      location.pathname.startsWith("admin/categories") ||
-      location.pathname.startsWith("admin/login") ||
-      location.pathname.startsWith("admin")
+      location.pathname.startsWith("/admin/posts") ||
+      location.pathname.startsWith("/admin/categories") ||
+      location.pathname.startsWith("/admin/login") ||
+      location.pathname.startsWith("/admin")
     );
   };
 
@@ -37,9 +38,9 @@ const AdminPanel = () => {
           <NavbarWithSearch />
         </header>
         <div className="mt-2">
-          {location.pathname === "admin/posts" && <Posts />}
-          {location.pathname === "admin/categories" && <Categories />}
-          {location.pathname === "admin/login" && <Login />}
+          {location.pathname === "/admin/posts" && <Posts />}
+          {location.pathname === "/admin/categories" && <Categories />}
+          {location.pathname === "/admin/login" && <Login />}
           {/* You may need to adjust the condition for NotFound */}
           {
             !isValidPath() &&
