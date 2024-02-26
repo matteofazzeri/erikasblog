@@ -12,9 +12,12 @@
 
 html,
 body {
+  margin: 0;
+  padding: 0;
   width: 100vw;
   max-width: 100vw;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 button {
@@ -40,6 +43,10 @@ a {
 
 .is-active {
   background-color: rgba(84, 84, 231, 0.349);
+}
+
+main, section, div {
+  max-width: 100vw;
 }
 
 /* Basic editor styles */

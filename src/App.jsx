@@ -8,7 +8,7 @@ import PrivateRoutes from "./auth/PrivateRoute";
 
 export default function App() {
   return (
-    <main className="w-screen min-h-screen">
+    <main className="min-h-screen">
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />

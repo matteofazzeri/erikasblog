@@ -16,7 +16,7 @@ export function NavbarWithSearch() {
       <div className="flex flex-wrap items-center justify-center xl:justify-between text-blue-gray-900">
         <Typography
           as="a"
-          href="/erikasblog/"
+          href="/"
           className="mr-0 cursor-pointer py-1.5 font-bold uppercase no-underline text-2xl"
         >
           Erika's Blog

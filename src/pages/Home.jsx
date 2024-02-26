@@ -1,113 +1,60 @@
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Typography,
-  Button,
-} from "@material-tailwind/react";
 import React from "react";
+import { Link } from "react-router-dom";
 
-function LatestPosts() {}
+const hardcodedPosts = [
+  {
+    id: 1,
+    title: "First Blog Post",
+    author: "John Doe",
+    date: "February 15, 2024",
+    summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    imageUrl: "https://via.placeholder.com/300", // Example placeholder image URL
+  },
+  {
+    id: 2,
+    title: "Second Blog Post",
+    author: "Jane Smith",
+    date: "February 16, 2024",
+    summary:
+      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    imageUrl: "https://via.placeholder.com/300", // Example placeholder image URL
+  },
+  // Add more hardcoded posts as needed
+];
 
 const Home = () => {
   return (
-    <section className="w-screen min-h-screen bg-blue-200 relative overflow-auto">
-      <header className="w-full h-[15vh] bg-white flex flex-col items-center justify-center gap-0 m-0 p-0">
-        <div className="flex flex-col items-center">
-          <Typography variant="h1">Erika's Blog</Typography>
-          <Typography variant="lead">Welcome to my brain</Typography>
-        </div>
-      </header>
-      <nav className="w-full h-[5vh] bg-black/10 flex justify-center items-center sticky top-0 z-[999]">
-        <ul className="flex flex-row gap-12">
-          <li>ciao</li>
-          <li>ciao</li>
-          <li>ciao</li>
-          <li>ciao</li>
-          <li>ciao</li>
-        </ul>
-      </nav>
-      <section className="w-full max-h-[calc(100vh-15vh-5vh)] flex flex-col md:flex-row p-4 ">
-        <div className="w-full md:w-[70%] h-fit flex flex-col">
-          <Typography variant="lead">
-            qui ci saranno i post più recenti. Per rendere l'idea
-          </Typography>
-          <Card className=" w-full p-4 mb-4">
-            <div className="w-full h-min flex justify-center bg-black">
-              <CardHeader floated={false} className=" h-fit w-fit">
-                <img
-                  src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-                  alt="card-image"
-                />
-              </CardHeader>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-4">Latest Blog Posts</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {hardcodedPosts.map((post) => (
+          <div
+            key={post.id}
+            className="bg-white shadow-md rounded-lg overflow-hidden"
+          >
+            <Link to={`/post/${post.id}`}>
+              <img
+                src={post.imageUrl}
+                alt={post.title}
+                className="w-full h-48 object-cover"
+              />
+            </Link>
+            <div className="p-4">
+              <Link
+                to={`/post/${post.id}`}
+                className="block text-lg font-semibold mb-2 hover:text-blue-500"
+              >
+                {post.title}
+              </Link>
+              <p className="text-gray-600 text-sm mb-2">
+                By {post.author} on {post.date}
+              </p>
+              <p className="text-gray-700">{post.summary}</p>
             </div>
-            <CardBody>
-              <Typography variant="h5" color="blue-gray" className="mb-2">
-                UI/UX Review Check
-              </Typography>
-              <Typography>
-                The place is close to Barceloneta Beach and bus stop just 2 min
-                by walk and near to &quot;Naviglio&quot; where you can enjoy the
-                main night life in Barcelona.
-              </Typography>
-            </CardBody>
-            <CardFooter className="pt-0">
-              <Button>Read More</Button>
-            </CardFooter>
-          </Card>
-          <Card className=" w-full p-4 mb-4">
-            <div className="w-full h-min flex justify-center bg-black">
-              <CardHeader floated={false} className=" h-fit w-fit">
-                <img
-                  src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-                  alt="card-image"
-                />
-              </CardHeader>
-            </div>
-            <CardBody>
-              <Typography variant="h5" color="blue-gray" className="mb-2">
-                UI/UX Review Check
-              </Typography>
-              <Typography>
-                The place is close to Barceloneta Beach and bus stop just 2 min
-                by walk and near to &quot;Naviglio&quot; where you can enjoy the
-                main night life in Barcelona.
-              </Typography>
-            </CardBody>
-            <CardFooter className="pt-0">
-              <Button>Read More</Button>
-            </CardFooter>
-          </Card>
-          <Card className=" w-full p-4 mb-4">
-            <div className="w-full h-min flex justify-center bg-black">
-              <CardHeader floated={false} className=" h-fit w-fit">
-                <img
-                  src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-                  alt="card-image"
-                />
-              </CardHeader>
-            </div>
-            <CardBody>
-              <Typography variant="h5" color="blue-gray" className="mb-2">
-                UI/UX Review Check
-              </Typography>
-              <Typography>
-                The place is close to Barceloneta Beach and bus stop just 2 min
-                by walk and near to &quot;Naviglio&quot; where you can enjoy the
-                main night life in Barcelona.
-              </Typography>
-            </CardBody>
-            <CardFooter className="pt-0">
-              <Button>Read More</Button>
-            </CardFooter>
-          </Card>
-        </div>
-        <div className="w-full md:w-[calc(100vw-70%)] bg-green-300 h-fit">
-          <Typography variant="lead">qui qualcosa, vedremo</Typography>
-        </div>
-      </section>
-    </section>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 
