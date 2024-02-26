@@ -5,7 +5,7 @@ const hardcodedPosts = [
   {
     id: 1,
     title: "First Blog Post",
-    author: "John Doe",
+    author: "John Doey",
     date: "February 15, 2024",
     summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     imageUrl: "https://via.placeholder.com/300", // Example placeholder image URL
