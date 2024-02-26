@@ -28,10 +28,7 @@ const Sidebar = ({ open, handleOpen }) => {
   return (
     <>
       <div className="mb-2 p-4">
-        <Link
-          to={import.meta.env.VITE_URL_BASE + "/admin"}
-          className="no-underline"
-        >
+        <Link to={"/admin"} className="no-underline">
           <Typography variant="h5" color="blue-gray">
             Dashboard
           </Typography>
@@ -78,7 +75,7 @@ const Sidebar = ({ open, handleOpen }) => {
           <AccordionBody className="py-1">
             <List className="p-0">
               <Link
-                to={"categories"}
+                to={"/admin/categories"}
                 className="flex items-center space-x-2 no-underline"
               >
                 <ListItem>
@@ -105,7 +102,7 @@ const Sidebar = ({ open, handleOpen }) => {
               </Link>
 
               <Link
-                to={"posts"}
+                to={"/admin/posts"}
                 className="flex items-center space-x-2 no-underline"
               >
                 <ListItem>

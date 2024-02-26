@@ -14,12 +14,12 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route element={<PrivateRoutes />}>
-            <Route path="admin/*" element={<AdminPanel />} />
+            <Route path="admin" element={<AdminPanel />} />
             <Route path="admin/posts" element={<AdminPanel />} />
             <Route path="admin/categories" element={<AdminPanel />} />
           </Route>
           <Route path="login" element={<Login />} />
-          <Route path="" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </main>
