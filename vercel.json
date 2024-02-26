@@ -1,18 +1,8 @@
 {
-    "routes": [
+    "rewrites": [
         {
-            "handle": "filesystem"
-        },
-        {
-            "src": "/(.*)",
-            "status": 404,
-            "dest": "/public/404.html"
-        }
-    ],
-    "redirects": [
-        {
-            "source": "/sc",
-            "destination": "https://github.com/matteofazzeri/erikasblog"
+            "source": "/(.*)",
+            "destination": "/"
         }
     ]
 }
